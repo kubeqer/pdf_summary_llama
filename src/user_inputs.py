@@ -6,7 +6,9 @@ def get_doc_to_summary() -> str:
     docs_str = ", ".join(docs)
     doc_to_summary = input(f"Pass me the doc to summary. You can choose: {docs_str}\n")
     if doc_to_summary not in docs:
-        print(f"ERROR: Provided value is not in the docs directory. {doc_to_summary}\n")
+        print(
+            f"\033[91mERROR: Provided value is not in the docs directory. {doc_to_summary}\n\033[0m"
+        )
         raise ValueError
     return doc_to_summary
 
@@ -14,12 +16,16 @@ def get_doc_to_summary() -> str:
 def get_model() -> str:
     models = get_ollama_models()
     models_str = ", ".join(models)
-    model_to_summary = input(f"Pass me the model to use. You have installed: {models_str}\n")
+    model_to_summary = input(
+        f"Pass me the model to use. You have installed: {models_str}\n"
+    )
     if model_to_summary not in models:
-        print(f"ERROR: Provided value is not available. {model_to_summary}")
+        print(
+            f"\033[91mERROR: Provided value is not available. {model_to_summary}\033[0m"
+        )
     return model_to_summary
 
 
 def get_prompt() -> str:
-    prompt = input("Ask me a question or give me a task!\n")
+    prompt = input("\nAsk me a question or give me a task!\n")
     return prompt
