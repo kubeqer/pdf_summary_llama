@@ -1,5 +1,4 @@
-from user_inputs import get_doc_to_summary, get_model, get_prompt
-from ollama import summary
+from summary_pipeline import summary_pipeline
 
 
 def main():
@@ -14,10 +13,7 @@ def main():
                                                                                                            
                                                                                                           """
     )
-    prompt = get_prompt()
-
-    summary_str = summary(doc, model, prompt)
-    print(summary_str)
+    summary_pipeline()
 
 
 if __name__ == "__main__":
