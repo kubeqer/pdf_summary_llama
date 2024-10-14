@@ -1,10 +1,10 @@
 from config import get_config
 from data_management import save_summary
-from ollama import summary
+from ollama_utils import summary
 from display import display_auto_summary
-from src.display import display_answers
-from src.ollama import answer_prompt
-from src.user_inputs import get_prompt
+from display import display_answers
+from ollama_utils import answer_prompt
+from user_inputs import get_prompt
 
 
 def summary_pipeline():
